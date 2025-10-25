@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Event Booking System</title>
+<link rel="stylesheet" href="styleE.css">
+</head>
+<body>
+
+<header>
+  <h1>Online Event Booking System</h1>
+</header>
+
+<div class="container">
+
+  <!-- ===== Event Listing ===== -->
+  <h2>Upcoming Events</h2>
+  <div class="event-list">
+    <div class="event-card">
+      <h2>Music Concert</h2>
+      <p><b>Date:</b> 10 Nov 2025</p>
+      <p><b>Time:</b> 6:30 PM</p>
+      <p>Join us for a live concert featuring popular bands.</p>
+      <p><b>Seats:</b> 100</p>
+      <button class="btn" onclick="openModal('Music Concert')">Book Now</button>
+    </div>
+    <div class="event-card">
+      <h2>Photography Workshop</h2>
+      <p><b>Date:</b> 5 Dec 2025</p>
+      <p><b>Time:</b> 10:00 AM</p>
+      <p>Learn photography basics and camera handling.</p>
+      <p><b>Seats:</b> 40</p>
+      <button class="btn" onclick="openModal('Photography Workshop')">Book Now</button>
+    </div>
+    <div class="event-card">
+      <h2>Tech Meetup</h2>
+      <p><b>Date:</b> 20 Nov 2025</p>
+      <p><b>Time:</b> 2:00 PM</p>
+      <p>A meetup for tech enthusiasts and developers.</p>
+      <p><b>Seats:</b> 60</p>
+      <button class="btn" onclick="openModal('Tech Meetup')">Book Now</button>
+    </div>
+  </div>
+
+  <!-- ===== Booking Modal ===== -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Book Event</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" required>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Seats:</label>
+        <input type="number" min="1" required>
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Admin Panel (Static) ===== -->
+  <div class="admin-panel">
+    <h2>Admin Panel (Static)</h2>
+    <p>Add New Event (Visual only)</p>
+    <input type="text" placeholder="Event Name">
+    <input type="date">
+    <input type="time">
+    <input type="number" placeholder="Seats Available">
+    <textarea placeholder="Event Description"></textarea>
+    <button>Add Event</button>
+  </div>
+
+</div>
+
+<script>
+// Modal functionality
+function openModal(eventName){
+  document.getElementById('bookingModal').style.display='flex';
+  document.getElementById('modalTitle').innerText = "Book: " + eventName;
+}
+function closeModal(){
+  document.getElementById('bookingModal').style.display='none';
+}
+</script>
+
+</body>
+</html>
